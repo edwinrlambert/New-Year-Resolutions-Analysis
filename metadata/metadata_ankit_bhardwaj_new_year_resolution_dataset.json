@@ -1,0 +1,195 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "data": { "@id": "cr:data", "@type": "@json" },
+    "dataBiases": "cr:dataBiases",
+    "dataCollection": "cr:dataCollection",
+    "dataType": { "@id": "cr:dataType", "@type": "@vocab" },
+    "dct": "http://purl.org/dc/terms/",
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isEnumeration": "cr:isEnumeration",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "personalSensitiveInformation": "cr:personalSensitiveInformation",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "wd": "https://www.wikidata.org/wiki/"
+  },
+  "alternateName": "A dataset of new year resolutions posted by different users on Twitter for 2015",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "license": {
+    "@type": "sc:CreativeWork",
+    "name": "CC0: Public Domain",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "distribution": [
+    {
+      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/ankit1743/new-year-resolutions-dataset?datasetVersionNumber=1",
+      "contentSize": "255.623 KB",
+      "md5": "HQq7JV0OuE/AwY0tO9vCrg==",
+      "encodingFormat": "application/zip",
+      "@id": "archive.zip",
+      "@type": "cr:FileObject",
+      "name": "archive.zip",
+      "description": "Archive containing all the contents of the New Year Resolutions Dataset dataset"
+    },
+    {
+      "contentUrl": "NewYear_Resolutions.csv",
+      "containedIn": { "@id": "archive.zip" },
+      "encodingFormat": "text/csv",
+      "@id": "NewYear_Resolutions.csv_fileobject",
+      "@type": "cr:FileObject",
+      "name": "NewYear_Resolutions.csv",
+      "description": "New Year Resolution dataset"
+    }
+  ],
+  "recordSet": [
+    {
+      "field": [
+        {
+          "dataType": ["sc:Float"],
+          "source": {
+            "fileObject": { "@id": "NewYear_Resolutions.csv_fileobject" },
+            "extract": { "column": "tweet_id" }
+          },
+          "@id": "NewYear_Resolutions.csv/tweet_id",
+          "@type": "cr:Field",
+          "name": "tweet_id",
+          "description": "Unique identifier for each tweet"
+        },
+        {
+          "dataType": ["sc:Text"],
+          "source": {
+            "fileObject": { "@id": "NewYear_Resolutions.csv_fileobject" },
+            "extract": { "column": "name" }
+          },
+          "@id": "NewYear_Resolutions.csv/name",
+          "@type": "cr:Field",
+          "name": "name",
+          "description": "Name or username of the Twitter user"
+        },
+        {
+          "dataType": ["sc:Text"],
+          "source": {
+            "fileObject": { "@id": "NewYear_Resolutions.csv_fileobject" },
+            "extract": { "column": "gender" }
+          },
+          "@id": "NewYear_Resolutions.csv/gender",
+          "@type": "cr:Field",
+          "name": "gender",
+          "description": "Gender of the Twitter user"
+        },
+        {
+          "dataType": ["sc:Text"],
+          "source": {
+            "fileObject": { "@id": "NewYear_Resolutions.csv_fileobject" },
+            "extract": { "column": "Resolution_Category" }
+          },
+          "@id": "NewYear_Resolutions.csv/Resolution_Category",
+          "@type": "cr:Field",
+          "name": "Resolution_Category",
+          "description": "Category under which the resolution falls"
+        },
+        {
+          "dataType": ["sc:Text"],
+          "source": {
+            "fileObject": { "@id": "NewYear_Resolutions.csv_fileobject" },
+            "extract": { "column": "text" }
+          },
+          "@id": "NewYear_Resolutions.csv/text",
+          "@type": "cr:Field",
+          "name": "text",
+          "description": "The actual text content of the tweet"
+        },
+        {
+          "dataType": ["sc:Integer"],
+          "source": {
+            "fileObject": { "@id": "NewYear_Resolutions.csv_fileobject" },
+            "extract": { "column": "retweet_count" }
+          },
+          "@id": "NewYear_Resolutions.csv/retweet_count",
+          "@type": "cr:Field",
+          "name": "retweet_count",
+          "description": "The actual text content of the tweet"
+        },
+        {
+          "dataType": ["sc:Date"],
+          "source": {
+            "fileObject": { "@id": "NewYear_Resolutions.csv_fileobject" },
+            "extract": { "column": "tweet_created" }
+          },
+          "@id": "NewYear_Resolutions.csv/tweet_created",
+          "@type": "cr:Field",
+          "name": "tweet_created",
+          "description": "Date and time when the tweet was created"
+        },
+        {
+          "dataType": ["sc:Text"],
+          "source": {
+            "fileObject": { "@id": "NewYear_Resolutions.csv_fileobject" },
+            "extract": { "column": "tweet_state" }
+          },
+          "@id": "NewYear_Resolutions.csv/tweet_state",
+          "@type": "cr:Field",
+          "name": "tweet_state",
+          "description": "State/location information of the user"
+        }
+      ],
+      "@id": "NewYear_Resolutions.csv",
+      "@type": "cr:RecordSet",
+      "name": "NewYear_Resolutions.csv",
+      "description": "New Year Resolution dataset"
+    }
+  ],
+  "version": 1,
+  "keywords": [
+    "subject \u003E people and society \u003E people \u003E holidays and cultural events",
+    "subject \u003E science and technology \u003E internet \u003E online communities"
+  ],
+  "isAccessibleForFree": true,
+  "includedInDataCatalog": {
+    "@type": "sc:DataCatalog",
+    "name": "Kaggle",
+    "url": "https://www.kaggle.com"
+  },
+  "creator": {
+    "@type": "sc:Person",
+    "name": "Ankit Bhardwaj",
+    "url": "/ankit1743",
+    "image": "https://storage.googleapis.com/kaggle-avatars/thumbnails/16365373-kg.jpg?t=2024-01-20-23-06-57"
+  },
+  "publisher": {
+    "@type": "sc:Organization",
+    "name": "Kaggle",
+    "url": "https://www.kaggle.com/organizations/kaggle",
+    "image": "https://storage.googleapis.com/kaggle-organizations/4/thumbnail.png"
+  },
+  "thumbnailUrl": "https://storage.googleapis.com/kaggle-datasets-images/4617743/7869882/096114357e680761e96d5b3488a71f01/dataset-card.jpg?t=2024-03-17-20-22-38",
+  "dateModified": "2024-03-17T20:05:27.967",
+  "@type": "sc:Dataset",
+  "name": "New Year Resolutions Dataset",
+  "url": "https://www.kaggle.com/datasets/ankit1743/new-year-resolutions-dataset/versions/1",
+  "description": "This dataset contains information about New Year resolutions posted by users on Twitter. The data includes the tweet ID, username, gender, the resolution category, the tweet text, number of retweets, date and time of tweet creation, and the US state of the user. Column description as follow:-\n\n**tweet_id:** Unique identifier for each tweet\n\n**name:** Name or username of the Twitter user\n\n**gender:** Gender of the Twitter user\n\n**Resolution_Category:** Category under which the resolution falls\n\n**text:** The actual text content of the tweet\n\n**retweet_count:** Number of times the tweet has been retweeted\n\n**tweet_created:** Date and time when the tweet was created\n\n**tweet_state:** State/location information of the user"
+}
